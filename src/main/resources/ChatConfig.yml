@@ -1,0 +1,14 @@
+GChatBan: false
+ChatFormat:
+  setFormat:
+    Enable: false
+    Format: "Lv.&b{SolarChat.Player.Level} &r| {SolarChat.Player.Prefix} %1$s &a▶&r %2$s"
+  CalledEventFormat:
+    Enable: true
+    Format: "Lv.&b{SolarChat.Player.Level} &r| {SolarChat.Player.Prefix} {SolarChat.Player.Name} &a▶&r {SolarChat.Player.msg}"
+
+Prefix:
+  op: "👑"
+  player: "🏠"
+
+StopMessage: "[i]"

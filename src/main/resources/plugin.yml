@@ -1,0 +1,19 @@
+name: SolarChat
+version: '${project.version}'
+main: me.cyh2.solarchat.SolarChat
+api-version: '1.19'
+authors:
+  - "cyh2"
+  - "CosmicNebula"
+  - "EternalStar"
+  - "CosmicNebula旗下SolarMC"
+website: "https://eternalstarmc.com:442/"
+commands:
+  GChatBan:
+    permission: SolarChat.GBan
+
+permissions:
+  SolarChat.GBan:
+    description: "禁言每个玩家"
+    default: op
+
