@@ -14,7 +14,7 @@ import static org.bukkit.Bukkit.getServer;
 public class GChatBan implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
-        if (commandSender.isOp()) {
+        if (commandSender.hasPermission("SolarChat.ChatBan")) {
             if (strings.length >= 1) {
                 if (ChatConfigCg.getBoolean("GChatBan")) {
                     ComponentBuilder builder = new ComponentBuilder("§c已关闭全体禁言！原因：" + strings[0]);

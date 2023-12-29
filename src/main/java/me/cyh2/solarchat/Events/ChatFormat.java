@@ -11,8 +11,7 @@ import org.bukkit.event.player.PlayerChatEvent;
 
 import java.util.Collection;
 
-import static me.cyh2.solarchat.SolarChat.ChatConfigCg;
-import static me.cyh2.solarchat.SolarChat.plugin;
+import static me.cyh2.solarchat.SolarChat.*;
 import static org.bukkit.Bukkit.getServer;
 
 public class ChatFormat implements Listener {
@@ -77,9 +76,13 @@ public class ChatFormat implements Listener {
                             e.setCancelled(true);
                         }
                     } else {
-                        getServer().spigot().broadcast(builder.create());
-                        getServer().getConsoleSender().spigot().sendMessage(builder.create());
-                        e.setCancelled(true);
+                        if (PlayerData_GetChatBan.getBoolean(p.getName())) {
+                            e.setCancelled(true);
+                        } else {
+                            getServer().spigot().broadcast(builder.create());
+                            getServer().getConsoleSender().spigot().sendMessage(builder.create());
+                            e.setCancelled(true);
+                        }
                     }
                 }
             }

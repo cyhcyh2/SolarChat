@@ -10,10 +10,12 @@ authors:
 website: "https://eternalstarmc.com:442/"
 commands:
   GChatBan:
-    permission: SolarChat.GBan
+    permission: SolarChat.ChatBan
+  ChatBan:
+    permission: SolarChat.ChatBan
 
 permissions:
-  SolarChat.GBan:
-    description: "禁言每个玩家"
+  SolarChat.ChatBan:
+    description: "禁言权限"
     default: op
 

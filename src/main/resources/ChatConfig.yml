@@ -12,3 +12,13 @@ Prefix:
   player: "🏠"
 
 StopMessage: "[i]"
+
+MySQL:
+  Enable: false
+  user: "root"
+  password: "password"
+  host: "localhost"
+  port: 3306
+
+YAML:
+  Enable: true

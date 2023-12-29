@@ -17,6 +17,8 @@ public final class SolarChat extends JavaPlugin {
     public static Plugin plugin;
     public static File ChatConfig;
     public static YamlConfiguration ChatConfigCg;
+    public static File PlayerData_ChatBan;
+    public static YamlConfiguration PlayerData_GetChatBan;
     @Override
     public void onEnable() {
         logger = getLogger();
@@ -26,8 +28,11 @@ public final class SolarChat extends JavaPlugin {
         server.getPluginManager().registerEvents(new OnUpdateAndCheckCompatible(), plugin);
         server.getPluginCommand("GChatBan").setExecutor(new GChatBan());
         saveResource("ChatConfig.yml", false);
+        saveResource("PlayerDatas/ChatBans.yml", false);
         ChatConfig = new File(this.getDataFolder(), "ChatConfig.yml");
         ChatConfigCg = YamlConfiguration.loadConfiguration(ChatConfig);
+        PlayerData_ChatBan = new File(this.getDataFolder(), "PlayerDatas/ChatBans.yml");
+        PlayerData_GetChatBan = YamlConfiguration.loadConfiguration(PlayerData_ChatBan);
         logger.info("SolarChat启动成功！");
         if (Utils.getSolarBan()) logger.info("检测到SolarBan插件，使用“/solarchat solarban on”来启用SolarBan兼容！");
         if (Utils.getSolarWebSocket()) logger.info("检测到SolarWebSocket插件，使用“/solarchat solarwebsocket on”来启用SolarWebSocket网页聊天！");
