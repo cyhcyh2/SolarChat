@@ -2,6 +2,7 @@ package me.cyh2.solarchat;
 
 import me.cyh2.solarchat.Events.ChatFormat;
 import me.cyh2.solarchat.Events.OnUpdateAndCheckCompatible;
+import me.cyh2.solarchat.commands.ChatBan;
 import me.cyh2.solarchat.commands.GChatBan;
 import org.bukkit.Server;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -27,6 +28,7 @@ public final class SolarChat extends JavaPlugin {
         server.getPluginManager().registerEvents(new ChatFormat(), plugin);
         server.getPluginManager().registerEvents(new OnUpdateAndCheckCompatible(), plugin);
         server.getPluginCommand("GChatBan").setExecutor(new GChatBan());
+        server.getPluginCommand("ChatBan").setExecutor(new ChatBan());
         saveResource("ChatConfig.yml", false);
         saveResource("PlayerDatas/ChatBans.yml", false);
         ChatConfig = new File(this.getDataFolder(), "ChatConfig.yml");
