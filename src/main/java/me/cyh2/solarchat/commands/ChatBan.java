@@ -25,7 +25,7 @@ public class ChatBan implements CommandExecutor {
                             ComponentBuilder builder = new ComponentBuilder("§c已关闭" + p.getName() + "的禁言！原因：" + strings[1]);
                             PlayerData_GetChatBan.set(p.getName(), false);
                             try {
-                                ChatConfigCg.save(ChatConfig);
+                                PlayerData_GetChatBan.save(PlayerData_ChatBan);
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }
@@ -36,7 +36,7 @@ public class ChatBan implements CommandExecutor {
                             ComponentBuilder builder = new ComponentBuilder("§c已开启" + p.getName() +"的禁言！原因：" + strings[1]);
                             PlayerData_GetChatBan.set(p.getName(), true);
                             try {
-                                ChatConfigCg.save(ChatConfig);
+                                PlayerData_GetChatBan.save(PlayerData_ChatBan);
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }
@@ -45,7 +45,11 @@ public class ChatBan implements CommandExecutor {
                             return true;
                         }
                     }
+                    commandSender.sendMessage("§c配置文件问题！");
+                    return false;
                 }
+                commandSender.sendMessage("§c玩家不存在！");
+                return false;
             }
             commandSender.sendMessage("§c请输入你开启该玩家禁言的理由！");
             return false;

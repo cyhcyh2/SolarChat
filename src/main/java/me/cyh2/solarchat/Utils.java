@@ -27,6 +27,14 @@ public class Utils {
             return false;
         }
     }
+    public static Boolean getPlaceHolderAPI () {
+        try{
+            Class.forName("me.cyh2.solarwebsocket.SolarWebSocket");
+            return true;
+        } catch (ClassNotFoundException e) {
+            return false;
+        }
+    }
     public static Boolean UpdateChecker () {
         return false;
     }
