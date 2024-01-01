@@ -64,7 +64,8 @@ public class Utils {
 
         // 调用类中的方法
         Method setPlaceHoldersMethod = PlaceHolderAPIClass.getMethod("setPlaceHolders", Player.class, String.class);
-        return (String) setPlaceHoldersMethod.invoke(placeHolderAPIInstance, p, str);
+        setPlaceHoldersMethod.setAccessible(true);
+        return setPlaceHoldersMethod.invoke(placeHolderAPIInstance, p, str).toString();
     }
     public static Boolean UpdateChecker () {
         return false;
