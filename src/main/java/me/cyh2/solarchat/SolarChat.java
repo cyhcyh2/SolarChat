@@ -46,8 +46,8 @@ public final class SolarChat extends JavaPlugin {
         logger.info("SolarChat启动成功啦！");
         clogger.sendMessage(ReColor(PluginName + "正在检测可兼容的插件哦~"));
         if (Utils.getSolarBan()) clogger.sendMessage(ReColor(PluginName + "检测到&b&lSolarBan&r插件，已经自动启用&b&lSolarBan&r兼容了哦~"));
-        if (Utils.getSolarWebSocket()) clogger.sendMessage("检测到&b&lSolarWebSocket&r插件，已经自动启用&b&lSolarWebSocket&r网页聊天了哦~");
-        if (Utils.getPlaceHolderAPI()) clogger.sendMessage(ReColor("&检测到&b&lPlaceHolderAPI&r插件，已经自动启用&b&lPlaceHolderAPI&r连接桥了哦~"));
+        if (Utils.getSolarWebSocket()) clogger.sendMessage(PluginName + "检测到&b&lSolarWebSocket&r插件，已经自动启用&b&lSolarWebSocket&r网页聊天了哦~");
+        if (Utils.getPlaceHolderAPI()) clogger.sendMessage(ReColor(PluginName + "检测到&b&lPlaceHolderAPI&r插件，已经自动启用&b&lPlaceHolderAPI&r连接桥了哦~"));
     }
 
     @Override

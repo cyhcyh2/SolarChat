@@ -39,7 +39,7 @@ public class Utils {
             return false;
         }
     }
-    public static String getPlaceHolders (String str) throws ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+    public static String getPlaceHolders (Player p, String str) throws ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
         // 获取类文件
         Class<?> PlaceHolderAPIClass = Class.forName("me.clip.placeholderapi.PlaceholderAPI");
 
@@ -63,8 +63,8 @@ public class Utils {
         Object placeHolderAPIInstance = PlaceHolderAPIClass.newInstance();
 
         // 调用类中的方法
-        Method setPlaceHoldersMethod = PlaceHolderAPIClass.getMethod("setPlaceHolders", String.class);
-        return (String) setPlaceHoldersMethod.invoke(placeHolderAPIInstance, str);
+        Method setPlaceHoldersMethod = PlaceHolderAPIClass.getMethod("setPlaceHolders", Player.class, String.class);
+        return (String) setPlaceHoldersMethod.invoke(placeHolderAPIInstance, p, str);
     }
     public static Boolean UpdateChecker () {
         return false;

@@ -70,8 +70,8 @@ public class ChatFormat implements Listener {
                             for (Player oplayer : onlinePlayers) {
                                 Utils.ps(plugin, oplayer, Sound.BLOCK_STONE_BUTTON_CLICK_ON);
                                 if (Utils.getPlaceHolderAPI()) {
-                                    Utils.getPlaceHolders(d);
-                                } else p.sendMessage(d);
+                                    oplayer.sendMessage(Utils.getPlaceHolders(p, d));
+                                } else oplayer.sendMessage(d);
                             }
                             getServer().getConsoleSender().spigot().sendMessage(builder.create());
                             e.setCancelled(true);
@@ -84,7 +84,9 @@ public class ChatFormat implements Listener {
                         } else {
                             for (Player oplayer : onlinePlayers) {
                                 Utils.ps(plugin, oplayer, Sound.BLOCK_STONE_BUTTON_CLICK_ON);
-                                getServer().spigot().broadcast(builder.create());
+                                if (Utils.getPlaceHolderAPI()) {
+                                    oplayer.sendMessage(Utils.getPlaceHolders(p, d));
+                                } else oplayer.sendMessage(d);
                             }
                             getServer().getConsoleSender().spigot().sendMessage(builder.create());
                             e.setCancelled(true);
