@@ -9,6 +9,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerChatEvent;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import static me.cyh2.solarchat.SolarChat.*;
@@ -17,7 +18,7 @@ import static org.bukkit.Bukkit.getServer;
 public class ChatFormat implements Listener {
     static Collection<? extends Player> onlinePlayers = Bukkit.getServer().getOnlinePlayers();
     @EventHandler
-    public static void SetChatFormat (PlayerChatEvent e) {
+    public static void SetChatFormat (PlayerChatEvent e) throws ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
         Player p = e.getPlayer();
         if (!e.getMessage().contains(ChatConfigCg.getString("StopMessage"))) {
             if (ChatConfigCg.getBoolean("ChatFormat.setFormat.Enable")) {
@@ -55,9 +56,6 @@ public class ChatFormat implements Listener {
                 } else if (ChatConfigCg.getString("Prefix.player") == null) {
                     p.sendMessage(Utils.ReColor("&c服务器配置文件出现严重问题！"));
                 } else {
-                    for (Player oplayer : onlinePlayers) {
-                        Utils.ps(plugin, oplayer, Sound.BLOCK_STONE_BUTTON_CLICK_ON);
-                    }
                     String a = Utils.ReColor(ChatConfigCg.getString("ChatFormat.CalledEventFormat.Format").replace("{SolarChat.Player.Level}", Integer.toString(p.getLevel())));
                     String b;
                     if (p.isOp()) {
@@ -69,7 +67,12 @@ public class ChatFormat implements Listener {
                     builder.append(d);
                     if (ChatConfigCg.getBoolean("GChatBan")) {
                         if (p.isOp()) {
-                            getServer().spigot().broadcast(builder.create());
+                            for (Player oplayer : onlinePlayers) {
+                                Utils.ps(plugin, oplayer, Sound.BLOCK_STONE_BUTTON_CLICK_ON);
+                                if (Utils.getPlaceHolderAPI()) {
+                                    Utils.getPlaceHolders(d);
+                                } else p.sendMessage(d);
+                            }
                             getServer().getConsoleSender().spigot().sendMessage(builder.create());
                             e.setCancelled(true);
                         } else {
@@ -79,7 +82,10 @@ public class ChatFormat implements Listener {
                         if (PlayerData_GetChatBan.getBoolean(p.getName())) {
                             e.setCancelled(true);
                         } else {
-                            getServer().spigot().broadcast(builder.create());
+                            for (Player oplayer : onlinePlayers) {
+                                Utils.ps(plugin, oplayer, Sound.BLOCK_STONE_BUTTON_CLICK_ON);
+                                getServer().spigot().broadcast(builder.create());
+                            }
                             getServer().getConsoleSender().spigot().sendMessage(builder.create());
                             e.setCancelled(true);
                         }
