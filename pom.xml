@@ -6,7 +6,7 @@
 
     <groupId>me.cyh2</groupId>
     <artifactId>SolarChat</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
     <packaging>jar</packaging>
 
     <name>SolarChat</name>
@@ -66,6 +66,13 @@
             <artifactId>spigot-api</artifactId>
             <version>1.19-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>me.clip</groupId>
+            <artifactId>placeholderapi</artifactId>
+            <version>2.11.2</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/libs/PlaceholderAPI-2.11.2.jar</systemPath>
         </dependency>
     </dependencies>
 </project>

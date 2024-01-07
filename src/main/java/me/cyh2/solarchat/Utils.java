@@ -1,12 +1,22 @@
 package me.cyh2.solarchat;
 
+import com.google.gson.Gson;
+import jdk.internal.org.jline.utils.InputStreamReader;
+import org.bukkit.Bukkit;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
+import com.google.gson.JsonArray;
+import com.google.gson.GsonBuilder;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.net.URL;
+
+import static me.cyh2.solarchat.SolarChat.plugin;
 
 public class Utils {
     public static String ReColor (String text) {
@@ -67,7 +77,5 @@ public class Utils {
         setPlaceHoldersMethod.setAccessible(true);
         return setPlaceHoldersMethod.invoke(placeHolderAPIInstance, p, str).toString();
     }
-    public static Boolean UpdateChecker () {
-        return false;
-    }
 }
+

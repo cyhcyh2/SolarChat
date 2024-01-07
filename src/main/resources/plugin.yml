@@ -13,6 +13,8 @@ commands:
     permission: SolarChat.ChatBan
   ChatBan:
     permission: SolarChat.ChatBan
+  show-ip:
+    description: "显示您的IP"
 
 permissions:
   SolarChat.ChatBan:

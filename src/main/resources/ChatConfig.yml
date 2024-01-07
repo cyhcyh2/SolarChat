@@ -22,3 +22,11 @@ MySQL:
 
 YAML:
   Enable: true
+
+Message:
+  IPShowEnableWarn: "你确定要&b&l开启IP地址显示&r吗，这可能会泄露你的&b&l个人信息&r哦~ 使用&b&l/show-ip con&r来确定！"
+  IPShowDisableWarn: "你确定要&b&l关闭IP地址显示&r吗，使用&b&l/show-ip con&r来确定！"
+  IPShowEnable: "你&b&l开启了IP地址展示功能&r哦~在聊天时&b&l将会显示你的IP地址和IP属地&r！再次使用&b&l/show-ip con可以关闭&r哦~"
+  IPShowDisable: "你&b&l关闭了IP地址展示功能&r哦~在聊天时&b&l将不在会显示你的IP地址和所在地区&r！再次&b&l使用/show-ip con可以开启&r哦~"
+  IPPEnable: "你把IP属地信息显示模式改为了聊天前缀模式哦~"
+  IPPDisable: "你把IP属地信息显示模式改为了名称悬浮窗模式哦~"
