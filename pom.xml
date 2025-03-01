@@ -6,7 +6,7 @@
 
     <groupId>me.cyh2</groupId>
     <artifactId>SolarChat</artifactId>
-    <version>1.1</version>
+    <version>2.0</version>
     <packaging>jar</packaging>
 
     <name>SolarChat</name>
