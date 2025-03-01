@@ -1,4 +1,4 @@
-package me.cyh2.solarchat.SolarUtils;
+package me.cyh2.solarchat.utils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -38,7 +38,7 @@ public class IPInfo {
         return isp;
     }
 
-    public static IPInfo requestIPInfo(String ip) throws IOException {
+    public static IPInfo fromIP (String ip) throws IOException {
         String api_url = "http://ip-api.com/json/" + ip;
         URL url = new URL(api_url);
         URLConnection conn = url.openConnection();

@@ -74,5 +74,11 @@
             <scope>system</scope>
             <systemPath>${basedir}/libs/PlaceholderAPI-2.11.2.jar</systemPath>
         </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>24.1.0</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 </project>

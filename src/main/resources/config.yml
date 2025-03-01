@@ -1,0 +1,14 @@
+chat-format:
+  formatter:
+    level: "Lv.&b{level} &r| "
+    prefix: "{prefix} "
+    name: "{name} "
+    msg: "&a▶&r {msg}"
+
+prefix:
+  op: "👑"
+  default: "🏠"
+
+
+YAML:
+  Enable: true

@@ -17,6 +17,8 @@ commands:
     description: "显示您的IP"
 
 permissions:
+  solarchat.admin:
+    default: op
   SolarChat.ChatBan:
     description: "禁言权限"
     default: op
